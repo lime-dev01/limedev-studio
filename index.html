@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LimeDev | Développeur Web Freelance</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- FORMES GÉOMÉTRIQUES DE FOND (Dégradés lumineux) -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#" class="logo">Lime<span>Dev</span>.</a>
+        <ul class="nav-links">
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#competences">Expertise</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#contact" class="btn-primary">Me Contacter</a></li>
+        </ul>
+    </nav>
+
+    <!-- SECTION HERO / ACCUEIL -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge hidden-element">Développement Web & Sur-Mesure</span>
+            <h1 class="hidden-element">Des expériences web d'exception pour les créateurs.</h1>
+            <p class="hidden-element">Je conçois des sites web ultra-rapides, élégants et performants. Zéro compromis sur le design, zéro abonnement inutile.</p>
+            <div class="hero-buttons hidden-element">
+                <a href="#projets" class="btn-primary">Découvrir mes réalisations</a>
+                <a href="https://instagram.com/" target="_blank" class="btn-secondary">📸 Instagram</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION PROJETS -->
+    <section id="projets" class="section">
+        <div class="section-header hidden-element">
+            <span class="section-tag">Portfolio</span>
+            <h2>Mes Réalisations</h2>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Projet 1 -->
+            <div class="project-card hidden-element">
+                <div class="project-info">
+                    <span class="project-category">Site Vitrine & Galerie d'Art</span>
+                    <h3>Yola Art Paris</h3>
+                    <p>Portfolio minimaliste haut de gamme pour une photographe professionnelle. Intégration d'une galerie fluide, design responsive et performances maximales.</p>
+                    <a href="https://limedev01.github.io/yola-art-paris" target="_blank" class="project-link">Voir le site en direct ↗</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION COMPÉTENCES -->
+    <section id="competences" class="section bg-light-alt">
+        <div class="section-header hidden-element">
+            <span class="section-tag">Savoir-Faire</span>
+            <h2>Expertise Technique</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card hidden-element">
+                <h3>Front-End Moderne</h3>
+                <p>HTML5, CSS3 (Grid/Flexbox), JavaScript ES6+. Des interfaces fluides et parfaitement adaptées à tous les écrans.</p>
+            </div>
+            <div class="skill-card hidden-element">
+                <h3>Performance & SEO</h3>
+                <p>Optimisation poussée du code pour un chargement instantané et un meilleur référencement naturel sur Google.</p>
+            </div>
+            <div class="skill-card hidden-element">
+                <h3>Déploiement Pro</h3>
+                <p>Gestion de versions avec Git & GitHub, mise en place de formulaires sécurisés et de domaines personnalisés.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION À PROPOS -->
+    <section id="apropos" class="section">
+        <div class="about-container">
+            <div class="about-text hidden-element">
+                <span class="section-tag">À propos</span>
+                <h2>L'exigence du détail</h2>
+                <p>Passionné par l'architecture web et le design épuré, je m'engage à fournir des solutions sur-mesure qui valorisent l'image de mes clients. Contrairement aux créateurs de sites automatisés, chaque ligne de code est pensée pour offrir une expérience unique, rapide et durable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="section contact-section">
+        <div class="contact-box hidden-element">
+            <span class="section-tag">Discutons-en</span>
+            <h2>Un projet en tête ?</h2>
+            <p>Remplissez le formulaire ci-dessous ou contactez-moi directement via mes réseaux.</p>
+            
+            <!-- Formulaire Formspree (Remplace ton lien formspree dans action) -->
+            <form action="https://formspree.io/f/ton-identifiant-formspree" method="POST" class="contact-form">
+                <input type="text" name="nom" placeholder="Votre Nom / Entreprise" required>
+                <input type="email" name="email" placeholder="Votre Adresse E-mail" required>
+                <textarea name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+                <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer;">Envoyer le message</button>
+            </form>
+
+            <div class="social-contact">
+                <a href="https://instagram.com/" target="_blank">📸 Suivre LimeDev sur Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 LimeDev. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
