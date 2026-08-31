@@ -281,10 +281,18 @@ footer {
   color: #64748b;
   font-size: 0.85rem;
 }
+/* --- ANIMATION SCROLL (TEXTE VISIBLE) --- */
+.hidden-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
-/* ANIMATION D'APPARITION */
-.hidden-element { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.show-element { opacity: 1; transform: translateY(0); }
+.hidden-element.show,
+.hidden-element.show-element {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
 
 /* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
