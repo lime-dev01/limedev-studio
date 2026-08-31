@@ -8,14 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15 // Déclenche l'animation quand 15% de l'élément est visible
+        threshold: 0.15
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show-element');
-                // Optionnel : stoppe l'observation une fois l'élément affiché
                 observer.unobserve(entry.target);
             }
         });
@@ -25,19 +24,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ===================================================
-       2. EFFET OMBRE / RESSORT SUR LA NAV AU SCROLL
+       2. EFFET OMBRE SUR LA NAV AU SCROLL
        =================================================== */
     const nav = document.querySelector('nav');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
-            nav.style.padding = '15px 5%';
-        } else {
-            nav.style.boxShadow = 'none';
-            nav.style.padding = '20px 5%';
-        }
-    });
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
+                nav.style.padding = '15px 5%';
+            } else {
+                nav.style.boxShadow = 'none';
+                nav.style.padding = '20px 5%';
+            }
+        });
+    }
 
 
     /* ===================================================
@@ -49,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href');
             
-            // Si c'est juste "#" (comme sur le logo), on remonte en haut
             if (targetId === '#') {
                 e.preventDefault();
                 window.scrollTo({
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (targetSection) {
                 e.preventDefault();
-                const navHeight = nav.offsetHeight;
+                const navHeight = nav ? nav.offsetHeight : 0;
                 const targetPosition = targetSection.offsetTop - navHeight;
 
                 window.scrollTo({
@@ -74,14 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+
+    /* ===================================================
+       4. MENU BURGER MOBILE
+       =================================================== */
+    const burgerMenu = document.getElementById('burger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    if (burgerMenu && navLinks) {
+        burgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
 });
-const burgerMenu = document.getElementById('burger-menu');
-const navLinks = document.getElementById('nav-links');
-
-if (burgerMenu && navLinks) {
-    burgerMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-}
-
-burgerMenu.addEventListener('c
