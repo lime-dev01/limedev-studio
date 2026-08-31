@@ -27,9 +27,13 @@ h1, h2, h3, h4, .hero h1 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
 }
-  filter: blur(90px);
-  z-index: -1;
-  opacity: 0.4;
+
+.background-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+    opacity: 0.4;
 }
 .shape-1 {
   width: 400px; height: 400px;
