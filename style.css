@@ -2,31 +2,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-weight: normal; /* Sécurité : empêche les éléments d'hériter un gras indésirable */
 }
 
 :root {
-  --primary: #38bdf8;         /* Cyan / Bleu clair principal */
-  --primary-hover: #0284c7;   /* Bleu moyen pour le survol */
-  --primary-accent: #0ea5e9;  /* Accentuation vive */
-  --text-dark: #111111;
-  --text-muted: #666666;
-  --bg-light: #f8f9fa;
+    --primary: #38bdf8;        /* Cyan / Bleu clair principal */
+    --primary-hover: #0284c7;  /* Bleu moyen pour le survol */
+    --primary-accent: #0ea5e9; /* Accentuation vive */
+    --text-dark: #111111;
+    --text-muted: #666666;
+    --bg-light: #f8f9fa;
 }
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 400; /* Forcer l'épaisseur normale */
+    font-weight: 400;
     line-height: 1.6;
-    color: #333333;
+    color: var(--text-dark);
     margin: 0;
     padding: 0;
 }
 
-/* FORMES GÉOMÉTRIQUES EN DÉGRADÉ FLOTTANTES (Effet Lumineux Bleu Clair) */
-.bg-shape {
-  position: absolute;
-  border-radius: 50%;
+/* Polices des titres */
+h1, h2, h3, h4, .hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+}
   filter: blur(90px);
   z-index: -1;
   opacity: 0.4;
