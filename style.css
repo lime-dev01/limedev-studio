@@ -1,5 +1,9 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal; /* Sécurité : empêche les éléments d'hériter un gras indésirable */
+}
 
 :root {
   --primary: #38bdf8;         /* Cyan / Bleu clair principal */
