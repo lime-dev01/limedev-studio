@@ -360,3 +360,140 @@ main, body {
     display: flex !important;
     flex-direction: column !important;
 }
+/* ==========================================
+   NAVIGATION & LOGO (PC & MOBILE)
+   ========================================== */
+
+/* Structure générale de la nav */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+/* Style du Logo LimeDev */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #0284c7;
+    font-weight: 600;
+}
+
+/* Liens de navigation sur PC */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #334155;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0284c7;
+}
+
+/* Bouton Burger caché sur Ordinateur */
+.burger-menu {
+    display: none;
+}
+
+
+/* ==========================================
+   ADAPTATION MOBILE (Écrans < 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    
+    /* Affichage du bouton burger */
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 26px;
+        height: 18px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+
+    .burger-menu span {
+        width: 100%;
+        height: 2px;
+        background-color: #0f172a;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Le menu déroulant compact et propre */
+    .nav-links {
+        display: none; /* Caché par défaut */
+        position: absolute;
+        top: 100%;
+        right: 5%; /* Aligné à droite */
+        width: 220px; /* Taille limitée pour ne pas tout couvrir */
+        background: #ffffff;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.2rem;
+        gap: 0.5rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    /* Quand le JS ajoute la classe active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Design des options dans le menu mobile */
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.7rem 1rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #334155;
+        transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        background-color: #f1f5f9;
+        color: #0284c7;
+    }
+
+    /* Style du bouton "Me contacter" dans le menu mobile */
+    .nav-links a.btn-primary {
+        text-align: center;
+        margin-top: 0.5rem;
+        padding: 0.75rem 1rem;
+    }
+}
