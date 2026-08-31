@@ -5,9 +5,9 @@
 }
 
 :root {
-    --primary: #38bdf8;        /* Cyan / Bleu clair principal */
-    --primary-hover: #0284c7;  /* Bleu moyen pour le survol */
-    --primary-accent: #0ea5e9; /* Accentuation vive */
+    --primary: #38bdf8;
+    --primary-hover: #0284c7;
+    --primary-accent: #0ea5e9;
     --text-dark: #111111;
     --text-muted: #666666;
     --bg-light: #f8f9fa;
@@ -20,6 +20,8 @@ body {
     color: var(--text-dark);
     margin: 0;
     padding: 0;
+    position: relative;
+    overflow-x: hidden;
 }
 
 /* Polices des titres */
@@ -28,6 +30,7 @@ h1, h2, h3, h4, .hero h1 {
     font-weight: 700;
 }
 
+/* FORMES DÉCORATIVES (EN ARRIÈRE-PLAN) */
 .background-shape {
     position: absolute;
     border-radius: 50%;
@@ -35,17 +38,22 @@ h1, h2, h3, h4, .hero h1 {
     z-index: -1;
     opacity: 0.4;
 }
+
 .shape-1 {
-  width: 400px; height: 400px;
-  background: linear-gradient(135deg, #38bdf8, #818cf8);
-  top: -100px; left: -100px;
-}
-.shape-2 {
-  width: 500px; height: 500px;
-  background: linear-gradient(135deg, #7dd3fc, #38bdf8);
-  top: 40%; right: -150px;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    top: -100px;
+    left: -100px;
 }
 
+.shape-2 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+    top: 40%;
+    right: -150px;
+}
 /* NAVIGATION */
 nav {
   position: fixed; top: 0; left: 0; width: 100%;
