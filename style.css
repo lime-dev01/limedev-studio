@@ -369,7 +369,16 @@ main, body {
     position: relative;
     z-index: 1000;
 }
-
+nav {
+    display: flex;
+    justify-content: space-between; /* 👈 Écarte le logo à gauche et le burger à droite */
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 5%;
+    position: relative;
+    z-index: 1000;
+}
 /* Force le centrage du contenu sur PC avec des marges équilibrées */
 .nav-container {
     max-width: 1200px;
