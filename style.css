@@ -1,5 +1,5 @@
 /* ==========================================
-   1. VARIABLES & RESET GLOBAL
+   RESET & VARIABLES
    ========================================== */
 * {
     margin: 0;
@@ -7,85 +7,36 @@
     box-sizing: border-box;
 }
 
-:root {
-    --primary: #38bdf8;
-    --primary-hover: #0284c7;
-    --primary-accent: #0ea5e9;
-    --text-dark: #111111;
-    --text-muted: #666666;
-    --bg-light: #f8f9fa;
-}
-
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 400;
-    line-height: 1.6;
-    color: var(--text-dark);
-    margin: 0;
-    padding: 0;
-    position: relative;
-    overflow-x: hidden;
+    color: #111111;
+    background-color: #fafbfc;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
-
-/* Polices des titres */
-h1, h2, h3, h4, .hero h1 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 700;
-}
-
 
 /* ==========================================
-   2. FORMES DÉCORATIVES (EN ARRIÈRE-PLAN)
+   HEADER & NAVIGATION (AVEC LA BARRE BLANCHE SUR PC)
    ========================================== */
-.bg-shape {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    z-index: -1;
-    opacity: 0.4;
-    pointer-events: none;
-}
-
-.shape-1 {
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(135deg, #38bdf8, #818cf8);
-    top: -100px;
-    left: -100px;
-}
-
-.shape-2 {
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(135deg, #7dd3fc, #38bdf8);
-    top: 40%;
-    right: -150px;
-}
-
-
-/* ==========================================
-   3. NAVIGATION PRINCIPALE & BURGER
-   ========================================== */
-.navbar {
+.site-header {
     width: 100%;
-    position: relative;
+    background-color: #ffffff; /* 👈 Fond blanc sur PC */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); /* 👈 Ombre douce et élégante */
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
-nav {
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    padding: 20px 5%;
-    position: relative;
-    z-index: 1000;
 }
 
 .logo {
@@ -105,14 +56,13 @@ nav {
     list-style: none;
     gap: 2rem;
     align-items: center;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #0f172a;
     font-weight: 500;
+    font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
@@ -120,188 +70,68 @@ nav {
     color: #38bdf8;
 }
 
-/* Bouton burger masqué par défaut sur PC */
+/* Bouton Burger (Caché sur PC) */
 .burger-menu {
     display: none;
 }
 
 
 /* ==========================================
-   4. BOUTONS & SECTIONS
+   VERSION MOBILE (< 768px)
    ========================================== */
-.btn-primary {
-    display: inline-block; 
-    padding: 12px 28px;
-    background: linear-gradient(135deg, #38bdf8, #0284c7);
-    color: #fff;
-    text-decoration: none; 
-    font-size: 0.85rem; 
-    font-weight: 600;
-    border-radius: 50px; 
-    transition: all 0.3s ease;
-    border: none;
-}
-.btn-primary:hover {
-    background: linear-gradient(135deg, #0284c7, #0369a1);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.35);
-}
+@media screen and (max-width: 768px) {
+    .nav-container {
+        padding: 15px 5%;
+    }
 
-.btn-secondary {
-    display: inline-block; 
-    padding: 12px 28px;
-    background: rgba(0, 0, 0, 0.03); 
-    color: var(--text-dark);
-    text-decoration: none; 
-    font-size: 0.85rem; 
-    font-weight: 500;
-    border-radius: 50px; 
-    border: 1px solid rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-.btn-secondary:hover { background: rgba(0, 0, 0, 0.06); }
+    /* Burger ultra compact, stylé, collé à droite */
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 16px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
 
-/* HERO SECTION */
-.hero {
-    min-height: 80vh; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    text-align: center; 
-    padding: 0 20px;
-}
-.hero-content { max-width: 800px; }
-.badge {
-    display: inline-block; 
-    padding: 6px 16px; 
-    background: rgba(56, 189, 248, 0.12);
-    color: #0284c7; 
-    border-radius: 20px; 
-    font-size: 0.8rem; 
-    font-weight: 600;
-    margin-bottom: 20px; 
-    text-transform: uppercase; 
-    letter-spacing: 1px;
-}
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem; 
-    font-weight: 600; 
-    color: var(--text-dark);
-    margin-bottom: 20px; 
-    line-height: 1.2;
-}
-.hero p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; line-height: 1.6; }
-.hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .burger-menu .bar {
+        width: 100%;
+        height: 2.5px;
+        background-color: #0f172a;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
 
-/* SECTIONS GLOBALES */
-.section { padding: 80px 10%; max-width: 1200px; margin: 0 auto; width: 100%; }
-.bg-light-alt { background: rgba(255, 255, 255, 0.5); border-top: 1px solid rgba(0,0,0,0.03); border-bottom: 1px solid rgba(0,0,0,0.03); }
+    /* Menu déroulant mobile */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 0;
+        gap: 1.2rem;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        border-top: 1px solid rgba(0, 0, 0, 0.04);
+    }
 
-.section-header { text-align: center; margin-bottom: 60px; }
-.section-tag { color: #0284c7; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
-.section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--text-dark); }
-
-/* PROJET CARD */
-.projects-grid { display: grid; justify-content: center; }
-.project-card {
-    background: #fff; border: 1px solid rgba(0,0,0,0.06);
-    padding: 40px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-    transition: transform 0.3s, box-shadow 0.3s; max-width: 600px; width: 100%;
-}
-.project-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(56, 189, 248, 0.12); }
-.project-category { color: #0284c7; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-.project-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 10px 0 15px; color: var(--text-dark); }
-.project-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; }
-.project-link { color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: color 0.3s; }
-.project-link:hover { color: #0284c7; }
-
-/* SKILLS GRID */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-.skill-card {
-    background: #fff; padding: 30px; border-radius: 20px;
-    border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-}
-.skill-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--text-dark); }
-.skill-card p { color: var(--text-muted); font-size: 0.9rem; }
-
-/* À PROPOS */
-.about-container { max-width: 800px; margin: 0 auto; text-align: center; }
-.about-text h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 15px 0 20px; }
-.about-text p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; }
-
-/* CONTACT */
-.contact-section { display: flex; justify-content: center; }
-.contact-box {
-    background: #fff; border: 1px solid rgba(0,0,0,0.06);
-    padding: 50px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-    max-width: 600px; width: 100%; text-align: center;
-}
-.contact-box h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 10px 0 15px; }
-.contact-box p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px; }
-.contact-form { display: flex; flex-direction: column; gap: 15px; text-align: left; }
-.contact-form input, .contact-form textarea {
-    width: 100%; padding: 15px; background: #f8f9fa; border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 12px; font-family: inherit; font-size: 0.9rem; color: var(--text-dark); outline: none;
-    transition: border-color 0.3s;
-}
-.contact-form input:focus, .contact-form textarea:focus { border-color: #38bdf8; background: #fff; }
-.social-contact { margin-top: 25px; }
-.social-contact a { color: var(--text-dark); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
-.social-contact a:hover { color: #0284c7; }
-
-
-/* ==========================================
-   5. FOOTER
-   ========================================== */
-footer {
-    background-color: #0f172a;
-    color: #f8fafc;
-    padding: 60px 10% 20px;
-    margin-top: auto;
-    width: 100%;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #1e293b;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-brand { max-width: 320px; }
-.footer-brand .logo { color: #ffffff; }
-.footer-brand p { color: #94a3b8; margin-top: 12px; font-size: 0.9rem; line-height: 1.6; }
-
-.footer-links h4 {
-    margin-bottom: 16px;
-    font-size: 1rem;
-    color: #38bdf8;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.footer-links ul { list-style: none; padding: 0; }
-.footer-links li { margin-bottom: 10px; }
-.footer-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s ease; }
-.footer-links a:hover { color: #38bdf8; }
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 25px;
-    color: #64748b;
-    font-size: 0.85rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    .nav-links.active {
+        display: flex;
+    }
 }
 
 
 /* ==========================================
-   6. ANIMATION SCROLL
+   ANIMATION SCROLL (TEXTE VISIBLE)
    ========================================== */
 .hidden-element {
     opacity: 0;
@@ -313,64 +143,4 @@ footer {
 .hidden-element.show-element {
     opacity: 1 !important;
     transform: translateY(0) !important;
-}
-
-
-/* ==========================================
-   7. RESPONSIVE MOBILE (< 768px)
-   ========================================== */
-@media screen and (max-width: 768px) {
-    nav {
-        padding: 15px 5%;
-    }
-
-    .hero h1 { font-size: 2.5rem; }
-    .section { padding: 60px 5%; }
-    .contact-box, .project-card { padding: 25px; }
-
-    /* Burger ultra compact et calé à droite */
-    .burger-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 22px;
-        height: 15px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        z-index: 1001;
-    }
-
-    .burger-menu span {
-        width: 100%;
-        height: 2px;
-        background-color: #0f172a;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
-
-    /* Menu déroulant mobile sur fond blanc propre */
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #ffffff;
-        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem 0;
-        gap: 1.5rem;
-        box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.08);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    footer { padding: 40px 5% 20px; }
-    .footer-container { flex-direction: column; gap: 30px; }
 }
