@@ -75,20 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
-// Ouverture et fermeture du menu hamburger
 const burgerMenu = document.getElementById('burger-menu');
 const navLinks = document.getElementById('nav-links');
 
-if (burgerMenu && navLinks) {
-    burgerMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    // Ferme le menu dès qu'on clique sur un lien
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-        });
-    });
-}
-const burgerMenu = document.getElementById('burger-menu
+burgerMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
