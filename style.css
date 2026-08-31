@@ -1,8 +1,4 @@
-* html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -359,4 +355,8 @@ footer {
     .nav-links.active {
         display: flex;
     }
+}
+main, body {
+    display: flex !important;
+    flex-direction: column !important;
 }
