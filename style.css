@@ -19,22 +19,22 @@ body {
 }
 
 /* ==========================================
-   NAVIGATION & BURGER À DROITE
+   NAVIGATION & BARRE BLANCHE PLUS FINE
    ========================================== */
 .navbar {
     width: 100%;
     background-color: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 8px 0;
+    padding: 4px 0;
 }
 
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 5%;
+    padding: 6px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +44,7 @@ body {
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 700;
     text-decoration: none;
     color: #0f172a;
@@ -149,7 +149,7 @@ h1 {
     display: inline-block;
 }
 
-/* Bouton Instagram (sous le formulaire) entièrement arrondi et stylisé */
+/* Bouton Instagram (sous le formulaire) */
 .social-contact {
     margin-top: 20px;
     text-align: center;
@@ -160,7 +160,7 @@ h1 {
     background-color: #f1f5f9;
     color: #0f172a !important;
     padding: 12px 24px;
-    border-radius: 50px; /* 👈 Arrondi type pilule */
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     border: 1px solid #cbd5e1;
@@ -247,7 +247,7 @@ h2 {
 }
 
 /* ==========================================
-   VERSION MOBILE (< 768px) & BURGER ULTRA TRANSPARENT
+   VERSION MOBILE (< 768px) : BURGER À DROITE & DISCRET
    ========================================== */
 @media screen and (max-width: 768px) {
     h1 {
@@ -258,42 +258,43 @@ h2 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 20px;
-        height: 12px; /* 👈 Ultra compact */
+        width: 18px;
+        height: 10px; /* 👈 Ultra compact et discret */
         background: transparent;
         border: none;
         cursor: pointer;
         padding: 0;
         z-index: 1001;
-        margin-left: auto; /* 👈 Calé proprement à droite */
+        margin-left: auto; /* 👈 Repoussé bien à droite */
+        margin-right: 0;
     }
 
     .burger-menu span {
         width: 100%;
-        height: 2px;
+        height: 1.5px; /* 👈 Lignes ultra fines */
         background-color: #0f172a;
         border-radius: 4px;
         transition: all 0.3s ease;
     }
 
-    /* Menu déroulant très transparent et compact */
+    /* Menu déroulant extrêmement transparent (effet verre presque invisible) */
     .nav-links {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.55); /* 👈 Encore plus transparent */
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.35); /* 👈 Hyper transparent */
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         flex-direction: column;
         align-items: center;
-        padding: 15px 0;
-        gap: 0.8rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-        border-bottom-left-radius: 14px;
-        border-bottom-right-radius: 14px;
+        padding: 14px 0;
+        gap: 0.7rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
     }
 
     .nav-links.active {
@@ -326,7 +327,6 @@ footer {
     min-width: 250px;
 }
 
-/* Rend le mot "Lime" en blanc et "Dev" en bleu clair dans le footer */
 footer .logo {
     color: #ffffff !important; 
 }
@@ -334,13 +334,12 @@ footer .logo span {
     color: #38bdf8 !important;
 }
 
-/* Réorganisation : Légal à gauche, Navigation à droite */
 .footer-container .footer-links:nth-of-type(1) {
-    order: 2; /* Navigation à droite */
+    order: 2; 
 }
 
 .footer-container .footer-links:nth-of-type(2) {
-    order: 1; /* Légal à gauche */
+    order: 1; 
 }
 
 footer p, 
