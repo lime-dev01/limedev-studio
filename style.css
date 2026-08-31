@@ -28,12 +28,13 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding: 8px 0;
 }
 
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 5%;
+    padding: 10px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,7 +51,7 @@ body {
 }
 
 .logo span {
-    color: #00a8e8;
+    color: #2563eb !important;
 }
 
 .nav-links {
@@ -69,7 +70,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #00a8e8;
+    color: #2563eb;
 }
 
 .burger-menu {
@@ -119,18 +120,20 @@ h1 {
    BOUTONS & DESIGN GÉNÉRAL
    ========================================== */
 .btn-primary {
-    background-color: #0284c7;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
     color: #ffffff !important;
     padding: 12px 24px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    transition: transform 0.2s ease;
     display: inline-block;
 }
 
 .btn-primary:hover {
-    background-color: #0369a1;
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
     transform: translateY(-2px);
 }
 
@@ -142,12 +145,18 @@ h1 {
     text-decoration: none;
     font-weight: 600;
     border: 1px solid #cbd5e1;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     display: inline-block;
 }
 
-.btn-secondary:hover {
-    background-color: #e2e8f0;
+/* Hover Instagram Couleurs Officielles */
+.btn-secondary:hover, 
+.social-contact a:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 39, 67, 0.35);
 }
 
 /* Sections communes */
@@ -159,7 +168,7 @@ h1 {
 }
 
 .section-tag {
-    color: #0284c7;
+    color: #2563eb !important;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.85rem;
@@ -176,72 +185,8 @@ h2 {
 }
 
 /* ==========================================
-   VERSION MOBILE (< 768px)
+   CARTES, FORMULAIRE & BLOCS
    ========================================== */
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    .burger-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 28px;
-        height: 20px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        z-index: 1001;
-    }
-
-    .burger-menu span {
-        width: 100%;
-        height: 3px;
-        background-color: #0f172a;
-        border-radius: 4px;
-        transition: all 0.3s ease;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        flex-direction: column;
-        align-items: center;
-        padding: 25px 0;
-        gap: 1.2rem;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
-    }
-
-    .nav-links.active {
-        display: flex !important;
-    }
-}
-
-/* ==========================================
-   ANIMATION SCROLL
-   ========================================== */
-.hidden-element {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.hidden-element.show,
-.hidden-element.show-element {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-/* ==========================================
-   CARTES, FORMULAIRE & FOOTER DESIGN
-   ========================================== */
-
-/* Cartes de projets et compétences */
 .projects-grid, .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -257,7 +202,6 @@ h2 {
     border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-/* Formulaire de contact */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -280,7 +224,7 @@ h2 {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #0284c7;
+    border-color: #2563eb;
     background-color: #ffffff;
 }
 
@@ -295,83 +239,20 @@ h2 {
     font-weight: 600;
 }
 
-/* Footer stylisé */
-footer {
-    background-color: #ffffff;
-    border-top: 1px solid #e2e8f0;
-    padding: 60px 5% 20px 5%;
-    margin-top: auto;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: #64748b;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #0284c7;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #f1f5f9;
-    color: #94a3b8;
-    font-size: 0.9rem;
-}
 /* ==========================================
-   1. NAVIGATION & HAUT DE PAGE AJUSTÉS
-   ========================================== */
-.navbar {
-    padding: 8px 0; /* 👈 Réduit la hauteur de la barre du haut */
-}
-
-.nav-container {
-    padding: 10px 5%;
-}
-
-/* ==========================================
-   2. BOUTON INSTAGRAM (HOVER)
-   ========================================== */
-.btn-secondary:hover, 
-.social-contact a:hover {
-    background-color: #0284c7 !important;
-    color: #ffffff !important;
-    border-color: #0284c7 !important;
-    transform: translateY(-2px);
-    transition: all 0.3s ease;
-}
-
-/* ==========================================
-   3. MENU BURGER COMPACT & DESIGN (MOBILE)
+   VERSION MOBILE (< 768px) & BURGER
    ========================================== */
 @media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
     .burger-menu {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 24px;
-        height: 16px; /* 👈 Plus compact */
+        width: 22px;
+        height: 14px;
         background: transparent;
         border: none;
         cursor: pointer;
@@ -381,26 +262,28 @@ footer {
 
     .burger-menu span {
         width: 100%;
-        height: 2px; /* 👈 Lignes plus fines et stylées */
+        height: 2px;
         background-color: #0f172a;
         border-radius: 4px;
         transition: all 0.3s ease;
     }
 
-    /* Menu déroulant semi-transparent et élégant */
+    /* Menu déroulant semi-transparent (effet verre givré) */
     .nav-links {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.95); /* 👈 Moins opaque (effet glassmorphism léger) */
-        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         flex-direction: column;
         align-items: center;
         padding: 20px 0;
         gap: 1rem;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         border-bottom-left-radius: 14px;
         border-bottom-right-radius: 14px;
     }
@@ -411,41 +294,77 @@ footer {
 }
 
 /* ==========================================
-   4. FOOTER DANS LE THÈME BLEU
+   FOOTER (2 COLONNES & BLEU CLAIR)
    ========================================== */
 footer {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* 👈 Fond sombre/bleu élégant */
-    color: #f8fafc;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     padding: 50px 5% 20px 5%;
     margin-top: auto;
-    border-top: none;
 }
 
-footer .logo {
-    color: #ffffff;
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+    align-items: start;
 }
 
 footer p, 
+footer span, 
 .footer-links a, 
 .footer-bottom p {
-    color: #94a3b8; /* Texte discret et lisible sur fond sombre */
+    color: #7dd3fc !important;
 }
 
 .footer-links h4 {
-    color: #ffffff;
+    color: #38bdf8 !important;
     font-family: 'Playfair Display', serif;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
 }
 
 .footer-links a:hover {
-    color: #38bdf8; /* Surlignage bleu clair au survol */
+    color: #ffffff !important;
+    text-decoration: underline;
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    margin-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: #64748b;
-    font-size: 0.85rem;
+    border-top: 1px solid rgba(125, 211, 252, 0.15);
+}
+
+@media screen and (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr; 
+        gap: 25px;
+    }
+}
+
+/* ==========================================
+   ANIMATION SCROLL
+   ========================================== */
+.hidden-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hidden-element.show,
+.hidden-element.show-element {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
