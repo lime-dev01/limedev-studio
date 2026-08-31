@@ -75,3 +75,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+// Animation et Ouverture du Menu Burger (3 barres)
+const burgerMenu = document.getElementById('burger-menu');
+const navLinks = document.getElementById('nav-links');
+
+if (burgerMenu && navLinks) {
+    burgerMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Fermer le menu au clic sur un lien
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+}
