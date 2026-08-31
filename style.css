@@ -237,3 +237,105 @@ h2 {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
+/* ==========================================
+   CARTES, FORMULAIRE & FOOTER DESIGN
+   ========================================== */
+
+/* Cartes de projets et compétences */
+.projects-grid, .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.project-card, .skill-card, .contact-box, .about-text {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Formulaire de contact */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    background-color: #f8fafc;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0284c7;
+    background-color: #ffffff;
+}
+
+.social-contact {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-contact a {
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Footer stylisé */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 60px 5% 20px 5%;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #64748b;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #0284c7;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
