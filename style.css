@@ -10,7 +10,8 @@
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #111111;
-    background-color: #fafbfc;
+    background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #f0fdf4 100%);
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -18,7 +19,7 @@ body {
 }
 
 /* ==========================================
-   NAVIGATION (BARRE BLANCHE SUR PC)
+   NAVIGATION & BURGER
    ========================================== */
 .navbar {
     width: 100%;
@@ -49,7 +50,7 @@ body {
 }
 
 .logo span {
-    color: #38bdf8;
+    color: #00a8e8;
 }
 
 .nav-links {
@@ -68,24 +69,120 @@ body {
 }
 
 .nav-links a:hover {
-    color: #38bdf8;
+    color: #00a8e8;
 }
 
-/* Bouton Burger (Caché sur PC) */
 .burger-menu {
     display: none;
 }
 
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    padding: 80px 5% 60px 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.badge {
+    background-color: #e0f2fe;
+    color: #0284c7;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #0f172a;
+    max-width: 800px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ==========================================
+   BOUTONS & DESIGN GÉNÉRAL
+   ========================================== */
+.btn-primary {
+    background-color: #0284c7;
+    color: #ffffff !important;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #0369a1;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #f1f5f9;
+    color: #0f172a !important;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #cbd5e1;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+}
+
+/* Sections communes */
+.section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.section-tag {
+    color: #0284c7;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
 
 /* ==========================================
    VERSION MOBILE (< 768px)
    ========================================== */
 @media screen and (max-width: 768px) {
-    .nav-container {
-        padding: 15px 5%;
+    h1 {
+        font-size: 2rem;
     }
 
-    /* Affichage du Burger sur mobile */
     .burger-menu {
         display: flex;
         flex-direction: column;
@@ -107,7 +204,6 @@ body {
         transition: all 0.3s ease;
     }
 
-    /* Menu déroulant mobile caché par défaut */
     .nav-links {
         display: none;
         position: absolute;
@@ -120,20 +216,15 @@ body {
         padding: 25px 0;
         gap: 1.2rem;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
-        border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
-        border-top: 1px solid rgba(0, 0, 0, 0.04);
     }
 
-    /* S'affiche quand le JS ajoute la classe active */
     .nav-links.active {
         display: flex !important;
     }
 }
 
-
 /* ==========================================
-   ANIMATION SCROLL (TEXTE VISIBLE)
+   ANIMATION SCROLL
    ========================================== */
 .hidden-element {
     opacity: 0;
