@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
-// Animation et Ouverture du Menu Burger (3 barres)
+// Ouverture et fermeture du menu hamburger
 const burgerMenu = document.getElementById('burger-menu');
 const navLinks = document.getElementById('nav-links');
 
@@ -84,10 +84,11 @@ if (burgerMenu && navLinks) {
         navLinks.classList.toggle('active');
     });
 
-    // Fermer le menu au clic sur un lien
+    // Ferme le menu dès qu'on clique sur un lien
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
         });
     });
 }
+const burgerMenu = document.getElementById('burger-menu
