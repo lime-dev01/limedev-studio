@@ -10,7 +10,7 @@
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #111111;
-    background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #f0fdf4 100%);
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #f8fafc 100%);
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@ body {
 }
 
 .logo span {
-    color: #2563eb !important;
+    color: #38bdf8 !important; /* 👈 Bleu clair professionnel pour le logo */
 }
 
 .nav-links {
@@ -70,7 +70,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #2563eb;
+    color: #38bdf8;
 }
 
 .burger-menu {
@@ -120,20 +120,20 @@ h1 {
    BOUTONS & DESIGN GÉNÉRAL
    ========================================== */
 .btn-primary {
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%) !important;
     color: #ffffff !important;
     padding: 12px 24px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     border: none;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
     transition: transform 0.2s ease;
     display: inline-block;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%) !important;
     transform: translateY(-2px);
 }
 
@@ -168,7 +168,7 @@ h1 {
 }
 
 .section-tag {
-    color: #2563eb !important;
+    color: #38bdf8 !important; /* 👈 Harmonisation des tags en bleu clair */
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.85rem;
@@ -224,7 +224,7 @@ h2 {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #2563eb;
+    border-color: #38bdf8;
     background-color: #ffffff;
 }
 
@@ -240,7 +240,7 @@ h2 {
 }
 
 /* ==========================================
-   VERSION MOBILE (< 768px) & BURGER
+   VERSION MOBILE (< 768px) & BURGER TRANSPARENT
    ========================================== */
 @media screen and (max-width: 768px) {
     h1 {
@@ -268,22 +268,22 @@ h2 {
         transition: all 0.3s ease;
     }
 
-    /* Menu déroulant semi-transparent (effet verre givré) */
+    /* Menu déroulant ultra transparent & compact */
     .nav-links {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.7); /* 👈 Plus transparent */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
         flex-direction: column;
         align-items: center;
-        padding: 20px 0;
-        gap: 1rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 18px 0;
+        gap: 0.9rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         border-bottom-left-radius: 14px;
         border-bottom-right-radius: 14px;
     }
@@ -294,7 +294,7 @@ h2 {
 }
 
 /* ==========================================
-   FOOTER (2 COLONNES & BLEU CLAIR)
+   FOOTER (LÉGAL À GAUCHE, NAVIGATION À DROITE)
    ========================================== */
 footer {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -305,18 +305,33 @@ footer {
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 40px;
     margin-bottom: 30px;
     align-items: start;
+}
+
+.footer-brand {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Réorganisation : Légal à gauche, Navigation à droite */
+.footer-container .footer-links:nth-of-type(1) {
+    order: 2; /* Navigation à droite */
+}
+
+.footer-container .footer-links:nth-of-type(2) {
+    order: 1; /* Légal à gauche */
 }
 
 footer p, 
 footer span, 
 .footer-links a, 
 .footer-bottom p {
-    color: #7dd3fc !important;
+    color: #7dd3fc !important; /* 👈 Écriture en bleu clair */
 }
 
 .footer-links h4 {
@@ -349,8 +364,14 @@ footer span,
 
 @media screen and (max-width: 600px) {
     .footer-container {
-        grid-template-columns: 1fr; 
+        flex-direction: column;
         gap: 25px;
+    }
+    .footer-container .footer-links:nth-of-type(1) {
+        order: unset;
+    }
+    .footer-container .footer-links:nth-of-type(2) {
+        order: unset;
     }
 }
 
