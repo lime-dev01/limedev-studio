@@ -19,7 +19,7 @@ body {
 }
 
 /* ==========================================
-   NAVIGATION & BURGER
+   NAVIGATION & BURGER À DROITE
    ========================================== */
 .navbar {
     width: 100%;
@@ -51,7 +51,7 @@ body {
 }
 
 .logo span {
-    color: #38bdf8 !important; /* 👈 Bleu clair professionnel pour le logo */
+    color: #38bdf8 !important;
 }
 
 .nav-links {
@@ -149,6 +149,24 @@ h1 {
     display: inline-block;
 }
 
+/* Bouton Instagram (sous le formulaire) entièrement arrondi et stylisé */
+.social-contact {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-contact a {
+    display: inline-block;
+    background-color: #f1f5f9;
+    color: #0f172a !important;
+    padding: 12px 24px;
+    border-radius: 50px; /* 👈 Arrondi type pilule */
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #cbd5e1;
+    transition: all 0.3s ease;
+}
+
 /* Hover Instagram Couleurs Officielles */
 .btn-secondary:hover, 
 .social-contact a:hover {
@@ -168,7 +186,7 @@ h1 {
 }
 
 .section-tag {
-    color: #38bdf8 !important; /* 👈 Harmonisation des tags en bleu clair */
+    color: #38bdf8 !important;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.85rem;
@@ -228,19 +246,8 @@ h2 {
     background-color: #ffffff;
 }
 
-.social-contact {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.social-contact a {
-    color: #0f172a;
-    text-decoration: none;
-    font-weight: 600;
-}
-
 /* ==========================================
-   VERSION MOBILE (< 768px) & BURGER TRANSPARENT
+   VERSION MOBILE (< 768px) & BURGER ULTRA TRANSPARENT
    ========================================== */
 @media screen and (max-width: 768px) {
     h1 {
@@ -251,13 +258,14 @@ h2 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 22px;
-        height: 14px;
+        width: 20px;
+        height: 12px; /* 👈 Ultra compact */
         background: transparent;
         border: none;
         cursor: pointer;
         padding: 0;
         z-index: 1001;
+        margin-left: auto; /* 👈 Calé proprement à droite */
     }
 
     .burger-menu span {
@@ -268,22 +276,22 @@ h2 {
         transition: all 0.3s ease;
     }
 
-    /* Menu déroulant ultra transparent & compact */
+    /* Menu déroulant très transparent et compact */
     .nav-links {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.7); /* 👈 Plus transparent */
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        background-color: rgba(255, 255, 255, 0.55); /* 👈 Encore plus transparent */
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
         border: 1px solid rgba(255, 255, 255, 0.4);
         flex-direction: column;
         align-items: center;
-        padding: 18px 0;
-        gap: 0.9rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        padding: 15px 0;
+        gap: 0.8rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
         border-bottom-left-radius: 14px;
         border-bottom-right-radius: 14px;
     }
@@ -294,7 +302,7 @@ h2 {
 }
 
 /* ==========================================
-   FOOTER (LÉGAL À GAUCHE, NAVIGATION À DROITE)
+   FOOTER (LÉGAL À GAUCHE, NAV À DROITE, "LIME" BLANC)
    ========================================== */
 footer {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -318,6 +326,14 @@ footer {
     min-width: 250px;
 }
 
+/* Rend le mot "Lime" en blanc et "Dev" en bleu clair dans le footer */
+footer .logo {
+    color: #ffffff !important; 
+}
+footer .logo span {
+    color: #38bdf8 !important;
+}
+
 /* Réorganisation : Légal à gauche, Navigation à droite */
 .footer-container .footer-links:nth-of-type(1) {
     order: 2; /* Navigation à droite */
@@ -331,7 +347,7 @@ footer p,
 footer span, 
 .footer-links a, 
 .footer-bottom p {
-    color: #7dd3fc !important; /* 👈 Écriture en bleu clair */
+    color: #7dd3fc !important;
 }
 
 .footer-links h4 {
