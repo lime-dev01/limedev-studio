@@ -31,12 +31,13 @@ h1, h2, h3, h4, .hero h1 {
 }
 
 /* FORMES DÉCORATIVES (EN ARRIÈRE-PLAN) */
-.background-shape {
+.bg-shape {
     position: absolute;
     border-radius: 50%;
     filter: blur(90px);
     z-index: -1;
     opacity: 0.4;
+    pointer-events: none; /* Évite toute interférence avec le clic */
 }
 
 .shape-1 {
